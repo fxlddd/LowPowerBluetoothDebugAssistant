@@ -5,10 +5,16 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/service_name"
+        android:id="@+id/characteristic_properties_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/characteristic_name_tv"
         android:layout_width="match_parent"
         android:layout_height="128dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        />
 
     <View
         android:layout_width="match_parent"

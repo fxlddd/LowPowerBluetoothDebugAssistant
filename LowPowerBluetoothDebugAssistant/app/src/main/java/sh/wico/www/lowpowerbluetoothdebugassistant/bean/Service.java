@@ -9,6 +9,9 @@ public class Service {
     private String name;
     private BluetoothGattService service;
 
+    public enum  SERVICE_TYPE {
+        TYPE_USER_DEBUG, TYPE_NUMBER,TYPE_STR,TYPE_OTHER;
+    }
 
     public Service() {
     }
@@ -26,11 +29,11 @@ public class Service {
         this.name = name;
     }
 
-    public BluetoothGattService getService() {
+    public BluetoothGattService getBGService() {
         return service;
     }
 
-    public void setService(BluetoothGattService service) {
+    public void setBGService(BluetoothGattService service) {
         this.service = service;
     }
 }

@@ -15,11 +15,14 @@ import sh.wico.www.lowpowerbluetoothdebugassistant.bean.Service;
 
 /**
  * Created by HYW on 2017/12/12.
+ * 用于将服务展示到界面
  */
 
-public class ServiceAdapter extends RecyclerView.Adapter implements View.OnClickListener{
+public class ServiceAdapter extends RecyclerView.Adapter implements View.OnClickListener {
 
-    private List<Service> services;
+    private List<Service> services;                     // 服务列表
+    private OnItemClickListener itemClickListener;      // 点击事件监听
+
 
     public ServiceAdapter(List<Service> services) {
         this.services = services;
@@ -48,7 +51,13 @@ public class ServiceAdapter extends RecyclerView.Adapter implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        if (itemClickListener != null) {
+            itemClickListener.onItemClick(v, (int)v.getTag());
+        }
+    }
 
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -59,6 +68,10 @@ public class ServiceAdapter extends RecyclerView.Adapter implements View.OnClick
             super(itemView);
             serviceNameTv = itemView.findViewById(R.id.service_name);
         }
+    }
+
+    public void setItemClickListener(OnItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
     }
 
 }

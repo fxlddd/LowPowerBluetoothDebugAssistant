@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:label="BleDevices">
+        <activity
+            android:name=".MainActivity"
+            android:label="BleDevices">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,8 +33,10 @@
 
         <activity
             android:name=".ServicesActivity"
-            android:screenOrientation="portrait"
             android:label="BleServices"
-            />
+            android:screenOrientation="portrait" />
+        <activity android:name=".CharacteristicsActivity" />
+        <activity android:name=".GattDetailActivity"></activity>
     </application>
+
 </manifest>

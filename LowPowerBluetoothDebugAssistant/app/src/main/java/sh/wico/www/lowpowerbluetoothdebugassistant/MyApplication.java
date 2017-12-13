@@ -16,7 +16,13 @@ import sh.wico.www.lowpowerbluetoothdebugassistant.bean.Service;
 
 public class MyApplication extends Application {
 
+    private final List<Service> services = new ArrayList<>();
+    private final List<BluetoothGattCharacteristic> characteristics = new ArrayList<>();
+
+    public static Service.SERVICE_TYPE serviceType;
+
     private boolean clearflag;
+    private BluetoothGattCharacteristic characteristic;
 
     public boolean isClearflag() {
         return clearflag;
@@ -26,17 +32,6 @@ public class MyApplication extends Application {
         this.clearflag = clearflag;
     }
 
-    public enum  SERVICE_TYPE {
-        TYPE_USER_DEBUG, TYPE_NUMBER,TYPE_STR,TYPE_OTHER;
-    }
-
-    private final List<Service> services = new ArrayList<>();
-    private final List<BluetoothGattCharacteristic> characteristics = new ArrayList<>();
-
-    private BluetoothGattCharacteristic characteristic;
-
-    public static SERVICE_TYPE serviceType;
-
     public void setServices(List<Service> services) {
         this.services.clear();
         this.services.addAll(services);
@@ -44,5 +39,22 @@ public class MyApplication extends Application {
 
     public List<Service> getServices() {
         return services;
+    }
+
+    public List<BluetoothGattCharacteristic> getCharacteristics() {
+        return characteristics;
+    }
+
+    public void setCharacteristics(List<BluetoothGattCharacteristic> characteristics) {
+        this.characteristics.clear();
+        this.characteristics.addAll(characteristics);
+    }
+
+    public BluetoothGattCharacteristic getCharacteristic() {
+        return characteristic;
+    }
+
+    public void setCharacteristic(BluetoothGattCharacteristic characteristic) {
+        this.characteristic = characteristic;
     }
 }
