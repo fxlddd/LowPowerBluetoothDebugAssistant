@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/message_ll_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="64dp"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/message_tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            />
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorPrimary">
+        </View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/message_ll_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="64dp"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/message_tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            />
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorAccent">
+        </View>
+    </LinearLayout>
+
+
+</RelativeLayout>

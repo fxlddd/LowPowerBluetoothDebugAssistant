@@ -36,7 +36,8 @@
             android:label="BleServices"
             android:screenOrientation="portrait" />
         <activity android:name=".CharacteristicsActivity" />
-        <activity android:name=".GattDetailActivity"></activity>
+        <activity android:name=".GattDetailActivity" />
+        <activity android:name=".DebugActivity" android:label="debug" android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>

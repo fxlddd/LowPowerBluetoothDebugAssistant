@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +47,7 @@ public class ServicesActivity extends AppCompatActivity {
                 Intent intent = new Intent(ServicesActivity.this, CharacteristicsActivity.class);
                 String bgServiceUuid = bgService.getUuid().toString();
                 if (GattAttributes.USR_SERVICE.equals(bgServiceUuid)) {             // 记录服务类型
+                    intent = new Intent(ServicesActivity.this, DebugActivity.class);
                     intent.putExtra("is_user_service", true);
                     MyApplication.serviceType = Service.SERVICE_TYPE.TYPE_USER_DEBUG;
                 }
